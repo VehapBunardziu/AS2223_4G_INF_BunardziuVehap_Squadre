@@ -28,7 +28,8 @@ namespace Library
 
         public Team(string name)
         {
-            // TODO T.1
+            this.name = name;
+            List<Player> players = new List<Player>();
         }
 
         /// <summary>
