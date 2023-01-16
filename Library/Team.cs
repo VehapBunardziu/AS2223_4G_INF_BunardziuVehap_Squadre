@@ -29,7 +29,7 @@ namespace Library
         public Team(string name)
         {
             this.name = name;
-            List<Player> players = new List<Player>();
+            players= new List<Player>();
         }
 
         /// <summary>
@@ -41,7 +41,44 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
+            int i = 0;
+            int j = 0;
             // TODO T.2
+            foreach(Player p in players)
+            {
+                if(p.Role == Player.ERole.Rosa)
+                {
+                    i++;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+            if(player.Role == Player.ERole.Rosa)
+            {
+                if(i < MAX_ROSA_PLAYERS)
+                {
+                    players.Add(player);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if(j < MAX_RISERVA_PLAYERS)
+                {
+                    players.Add(player);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         /// <summary>
@@ -53,7 +90,7 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
-            // TODO T.3
+ 
         }
 
         /// <summary>
@@ -62,7 +99,7 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            // TODO T.4
+
         }
 
         public string Name { get { return name; } }
