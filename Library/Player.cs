@@ -23,7 +23,7 @@ namespace Library
 
         public string Description()
         {
-            return surname + " " + name + " " + Convert.ToString(role) + ", ";
+            return surname + " " + name + " " + Convert.ToString(role);
         }
 
         public ERole Role

@@ -112,9 +112,20 @@ namespace Library
         public string GetPlayers()
         {
             string output = "";
+            int max = players.Count -1;
+            int i = 0;
             foreach (Player p in players)
             {
-                output = output + p.Description + "\n";
+                if(i != max) {
+                    i++;
+                    output = output + p.Description() + ",\n";
+                }
+                else
+                {
+
+                    output = output + p.Description() + "\n";
+                }
+                
             }
             return output;
         }
