@@ -6,6 +6,7 @@ namespace Library
     {
         string name;
         string surname;
+
         ERole role;
 
         public enum ERole 
@@ -15,12 +16,14 @@ namespace Library
         }
         public Player(string name, string surname, ERole role)
         {
-            // TODO P.1
+            this.name = name;
+            this.surname = surname;
+            this.role = role;
         }
 
         public string Description()
         {
-            // TODO P.2
+            return surname + " " + name + " " + Convert.ToString(role) + ",";
         }
 
         public ERole Role { 
