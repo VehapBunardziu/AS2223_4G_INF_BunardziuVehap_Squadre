@@ -67,7 +67,7 @@ namespace Library
                     return false;
                 }
             }
-            else
+            else if(player.Role == Player.ERole.Riserva)
             {
                 if(j < MAX_RISERVA_PLAYERS)
                 {
@@ -78,6 +78,10 @@ namespace Library
                 {
                     return false;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -107,7 +111,12 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-
+            string output = "";
+            foreach (Player p in players)
+            {
+                output = output + p.Description + "\n";
+            }
+            return output;
         }
 
         public string Name { get { return name; } }
