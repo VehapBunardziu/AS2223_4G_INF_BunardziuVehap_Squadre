@@ -90,7 +90,15 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
- 
+            if (this.captain == null && captain.Role == Player.ERole.Rosa)
+            {
+                this.captain = captain;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
